@@ -22,8 +22,11 @@
   }
 }
 
-/* Custom utility classes for shadcn/ui patterns */
+/* Typeface utilities */
 @layer utilities {
+  .font-display { font-family: var(--font-manrope); }
+  .font-accent { font-family: var(--font-ibm-plex); }
+
   .animate-in {
     animation-name: animateIn;
     animation-duration: 350ms;
