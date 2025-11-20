@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import Features from './components/Features'
 import Menu from './components/Menu'
 import CTA from './components/CTA'
+import Reserve from './components/Reserve'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Hero />
         <Features />
         <Menu />
+        <Reserve />
         <CTA />
 
         {/* Minimal footer */}

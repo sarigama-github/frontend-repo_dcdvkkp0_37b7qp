@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 function CTA() {
   return (
@@ -18,14 +19,14 @@ function CTA() {
               <p className="text-slate-700 font-['Inter']">Open for dinner Tuesday–Sunday. Limited seats for the tasting menu. Walk-ins welcome at the bar.</p>
             </div>
             <div className="md:text-right">
-              <motion.a 
-                whileHover={{ y: -2 }} 
-                whileTap={{ y: 0 }}
-                href="#" 
-                className="inline-flex items-center px-6 py-3 rounded-full bg-amber-500 text-black font-medium hover:bg-amber-400 transition-colors"
-              >
-                Reserve now
-              </motion.a>
+              <motion.div whileHover={{ y: -2 }} whileTap={{ y: 0 }} className="inline-block">
+                <Link 
+                  to="/reserve"
+                  className="inline-flex items-center px-6 py-3 rounded-full bg-amber-500 text-black font-medium hover:bg-amber-400 transition-colors"
+                >
+                  Reserve now
+                </Link>
+              </motion.div>
             </div>
           </div>
         </motion.div>
