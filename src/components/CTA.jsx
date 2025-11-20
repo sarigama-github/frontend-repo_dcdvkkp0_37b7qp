@@ -10,12 +10,12 @@ function CTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="rounded-3xl border border-white/10 bg-gradient-to-r from-amber-500/20 via-amber-400/10 to-transparent p-10 text-white backdrop-blur"
+          className="rounded-3xl border border-amber-200 bg-gradient-to-r from-amber-100 via-amber-50 to-white p-10 text-slate-900"
         >
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h2 className="text-3xl font-semibold leading-tight mb-3 font-['Manrope']">Book your table</h2>
-              <p className="text-white/80 font-['Inter']">Open for dinner Tuesday–Sunday. Limited seats for the tasting menu. Walk-ins welcome at the bar.</p>
+              <p className="text-slate-700 font-['Inter']">Open for dinner Tuesday–Sunday. Limited seats for the tasting menu. Walk-ins welcome at the bar.</p>
             </div>
             <div className="md:text-right">
               <motion.a 

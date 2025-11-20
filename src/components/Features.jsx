@@ -34,16 +34,16 @@ function Features() {
               whileInView={{ y: 0, opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="rounded-2xl border border-white/10 bg-white/5 p-6 text-white/90 backdrop-blur hover:bg-white/10 transition-colors"
+              className="rounded-2xl border border-slate-200 bg-white p-6 text-slate-900 hover:shadow-md transition-shadow"
             >
               <h3 className="text-lg font-semibold mb-2 font-['Manrope']">{it.title}</h3>
-              <p className="text-sm text-white/70 leading-relaxed font-['Inter']">{it.desc}</p>
+              <p className="text-sm text-slate-600 leading-relaxed font-['Inter']">{it.desc}</p>
             </motion.div>
           ))}
         </motion.div>
       </div>
 
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_40%_at_50%_50%,rgba(255,255,255,0.05),transparent)]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_40%_at_50%_50%,rgba(251,191,36,0.08),transparent)]" />
     </section>
   )
 }
