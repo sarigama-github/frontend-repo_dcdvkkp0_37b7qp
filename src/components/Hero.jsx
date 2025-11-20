@@ -1,4 +1,10 @@
 import React from 'react'
+import { motion } from 'framer-motion'
+
+const fadeUp = {
+  hidden: { y: 20, opacity: 0 },
+  show: { y: 0, opacity: 1 }
+}
 
 function Hero() {
   return (
@@ -15,49 +21,78 @@ function Hero() {
 
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid lg:grid-cols-12 gap-10 items-center">
-          <div className="lg:col-span-7">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 backdrop-blur text-white/80 mb-6">
+          <motion.div 
+            className="lg:col-span-7"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ staggerChildren: 0.08 }}
+          >
+            <motion.div variants={fadeUp} className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 backdrop-blur text-white/80 mb-6">
               <span className="text-amber-400">New</span>
               <span className="text-xs tracking-wide">Chef ranked Top 5 on MasterChef</span>
-            </div>
+            </motion.div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl leading-tight font-semibold tracking-tight text-white">
+            <motion.h1 variants={fadeUp} className="text-4xl sm:text-5xl lg:text-6xl leading-tight font-semibold tracking-tight text-white">
               <span className="font-[\'Manrope\']">Masala</span> <span className="text-white/80 font-light">Nation</span>
-            </h1>
-            <p className="mt-5 text-lg text-white/70 max-w-xl leading-relaxed font-[\'Inter\']">
+            </motion.h1>
+            <motion.p variants={fadeUp} className="mt-5 text-lg text-white/70 max-w-xl leading-relaxed font-[\'Inter\']">
               A modern Indian kitchen celebrating bold flavors, seasonal ingredients, and refined technique.
               Crafted by our award-winning chef — a MasterChef Top 5 finalist.
-            </p>
+            </motion.p>
 
-            <div className="mt-8 flex items-center gap-3">
+            <motion.div variants={fadeUp} className="mt-8 flex items-center gap-3">
               <a href="#reserve" className="px-5 py-3 rounded-full bg-amber-500 text-black font-medium hover:bg-amber-400 transition-colors">Reserve a table</a>
               <a href="#menu" className="px-5 py-3 rounded-full bg-white/10 text-white hover:bg-white/20 backdrop-blur transition-colors">View menu</a>
-            </div>
+            </motion.div>
 
-            <div className="mt-8 flex items-center gap-6 text-white/60 text-sm">
+            <motion.div variants={fadeUp} className="mt-8 flex items-center gap-6 text-white/60 text-sm">
               <div className="flex -space-x-3">
                 <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?q=80&w=80&auto=format&fit=crop" className="w-10 h-10 rounded-full object-cover ring-2 ring-black/20" />
                 <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=80&auto=format&fit=crop" className="w-10 h-10 rounded-full object-cover ring-2 ring-black/20" />
                 <img src="https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=80&auto=format&fit=crop" className="w-10 h-10 rounded-full object-cover ring-2 ring-black/20" />
               </div>
               <p className="font-[\'IBM Plex Sans\']">“Exceptional food. Clean, modern, and absolutely delicious.”</p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <div className="lg:col-span-5">
+          <motion.div 
+            className="lg:col-span-5"
+            initial={{ opacity: 0, scale: 0.96, y: 20 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          >
             <div className="relative">
-              <div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-tr from-amber-500/20 via-white/5 to-transparent blur-2xl" />
-              <img
+              <motion.div 
+                aria-hidden 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-tr from-amber-500/20 via-white/5 to-transparent blur-2xl" 
+              />
+              <motion.img
                 src="https://images.unsplash.com/photo-1604909052743-89e532b16a35?q=80&w=1200&auto=format&fit=crop"
                 alt="Signature dish"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                 className="w-full aspect-[4/5] object-cover rounded-3xl border border-white/10 shadow-2xl"
               />
-              <div className="absolute -bottom-6 -left-6 bg-black/60 border border-white/10 text-white rounded-2xl p-4 backdrop-blur">
+              <motion.div 
+                initial={{ y: 16, opacity: 0 }} 
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="absolute -bottom-6 -left-6 bg-black/60 border border-white/10 text-white rounded-2xl p-4 backdrop-blur"
+              >
                 <p className="text-sm">MasterChef Top 5</p>
                 <p className="text-xs text-white/70">Our chef brings competition-level precision to every plate.</p>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
